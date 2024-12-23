@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path
-from post.views import UserProfileView,ListUserProfileView,CreateUserProfileView
+from post.views import UserProfileView,ListUserProfileView,CreateUserProfileView,LikesView
 
 
 urlpatterns = [
@@ -10,5 +10,6 @@ urlpatterns = [
     path('user/list/',ListUserProfileView.as_view(), name='user-profile-list'),
     path('user/',UserProfileView.as_view(),name='user-profile'),
     path('user/<id>/',UserProfileView.as_view(),name='update-user-profile'),
+    path('user/like/',LikesView.as_view(),name='user-like'),
 ]
 
